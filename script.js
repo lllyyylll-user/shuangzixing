@@ -16,6 +16,7 @@ let leftBtnPressed = false; // 左按钮状态
 let rightBtnPressed = false; // 右按钮状态
 let leftPressTime = 0; // 左按钮按下时间
 let rightPressTime = 0; // 右按钮按下时间
+let lastTime = Date.now(); // 上一帧的时间戳
 
 // 星空背景
 const stars = [];
@@ -112,6 +113,11 @@ function init() {
 
 // 绘制函数
 function draw() {
+    // 计算时间差
+    const currentTime = Date.now();
+    const deltaTime = (currentTime - lastTime) / 1000; // 转换为秒
+    lastTime = currentTime;
+    
     // 绘制星空背景
     ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -121,7 +127,7 @@ function draw() {
         const star = stars[i];
         
         // 更新星星位置（向下移动）
-        star.y += star.speed;
+        star.y += star.speed * 60 * deltaTime; // 根据时间差调整速度
         
         // 星星移出屏幕后重新放置到顶部
         if (star.y > canvas.height) {
@@ -204,8 +210,8 @@ function draw() {
     ctx.fill();
     ctx.closePath();
     
-    // 更新角度
-    angle += rotationSpeed;
+    // 根据时间差更新角度，确保速度与帧率无关
+    angle += rotationSpeed * 60 * deltaTime; // 60是目标帧率
     
     // 循环调用draw函数
     requestAnimationFrame(draw);
