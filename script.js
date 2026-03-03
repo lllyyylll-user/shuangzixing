@@ -73,15 +73,9 @@ function init() {
 
 // 绘制函数
 function draw() {
-    // 清空画布
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // 绘制中心
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, 10, 0, Math.PI * 2);
-    ctx.fillStyle = '#000';
-    ctx.fill();
-    ctx.closePath();
+    // 半透明背景覆盖，实现拖尾效果
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     // 计算红球位置
     const redBallX = centerX + Math.cos(angle) * radius;
