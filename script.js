@@ -4,11 +4,11 @@ const ctx = canvas.getContext('2d');
 
 // 游戏变量
 const centerX = canvas.width / 2; // 旋转中心X坐标（可调整）
-const centerY = canvas.height / 2; // 旋转中心Y坐标（可调整）
+const centerY = canvas.height / 1.3; // 旋转中心Y坐标（可调整）
 const radius = 100; // 旋转半径（适配新的Canvas尺寸）
-const ballRadius = 10; // 球的半径
+const ballRadius = 15; // 球的半径
 const baseSpeed = 0.05; // 基础旋转速度（可统一修改）
-const trailLength = 5; // 拖尾长度（可调整，值越大拖尾越长）
+const trailLength = 7; // 拖尾长度（可调整，值越大拖尾越长）
 let angle = 0; // 初始角度
 let rotationSpeed = 0; // 旋转速度
 let keysPressed = {}; // 跟踪按键状态
