@@ -411,6 +411,31 @@ function showMainMenu() {
     mainMenu.style.display = 'flex';
     // 暂停游戏
     isGameRunning = false;
+    
+    // 显示所有按钮，以便用户可以选择进入测试关卡
+    const addObstacleBtn = document.getElementById('addObstacleBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const completeBtn = document.getElementById('completeBtn');
+    const controls = document.querySelector('.controls');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    addObstacleBtn.style.display = 'block';
+    pauseBtn.style.display = 'block';
+    completeBtn.style.display = 'block';
+    controls.style.justifyContent = 'center';
+    leftBtn.style.flex = '1';
+    rightBtn.style.flex = '1';
+    menuBtn.style.flex = '1';
+    leftBtn.style.fontSize = '14px';
+    rightBtn.style.fontSize = '14px';
+    menuBtn.style.fontSize = '14px';
+    leftBtn.style.padding = '2.5px 15px';
+    rightBtn.style.padding = '2.5px 15px';
+    menuBtn.style.padding = '2.5px 15px';
+    leftBtn.style.order = '1';
+    rightBtn.style.order = '2';
+    menuBtn.style.order = '3';
 }
 
 // 显示设置页面
@@ -578,6 +603,46 @@ function startLevel(levelIndex) {
     isDragging = false;
     // 隐藏速度输入框
     speedInputContainer.style.display = 'none';
+    
+    // 根据关卡类型显示或隐藏测试相关按钮
+    const addObstacleBtn = document.getElementById('addObstacleBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const completeBtn = document.getElementById('completeBtn');
+    const controls = document.querySelector('.controls');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    
+    if (currentLevel === 3) { // 测试关卡
+        addObstacleBtn.style.display = 'block';
+        pauseBtn.style.display = 'block';
+        completeBtn.style.display = 'block';
+        controls.style.justifyContent = 'center';
+        leftBtn.style.flex = '1';
+        rightBtn.style.flex = '1';
+        menuBtn.style.flex = '1';
+        leftBtn.style.order = '1';
+        rightBtn.style.order = '2';
+        menuBtn.style.order = '3';
+    } else { // 正常关卡
+        addObstacleBtn.style.display = 'none';
+        pauseBtn.style.display = 'none';
+        completeBtn.style.display = 'none';
+        controls.style.justifyContent = 'space-between';
+        leftBtn.style.flex = '0 0 100px';
+        rightBtn.style.flex = '0 0 100px';
+        menuBtn.style.flex = '0 0 100px';
+        leftBtn.style.fontSize = '18px';
+        rightBtn.style.fontSize = '18px';
+        menuBtn.style.fontSize = '18px';
+        leftBtn.style.padding = '5px 15px';
+        rightBtn.style.padding = '5px 15px';
+        menuBtn.style.padding = '5px 15px';
+        leftBtn.style.order = '1';
+        menuBtn.style.order = '2';
+        rightBtn.style.order = '3';
+    }
+    
     // 开始游戏
     isGameRunning = true;
 }
