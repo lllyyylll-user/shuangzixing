@@ -33,6 +33,7 @@
                 <button id="level1Btn" class="level-btn">关卡 1</button>
                 <button id="level2Btn" class="level-btn">关卡 2</button>
                 <button id="level3Btn" class="level-btn">关卡 3</button>
+                <button id="testLevelBtn" class="level-btn">测试关卡</button>
             </div>
         </div>
         
@@ -61,12 +62,30 @@
             <button id="leftBtn">←</button>
             <button id="rightBtn">→</button>
             <button id="menuBtn">菜单</button>
+            <button id="addObstacleBtn">添加障碍物</button>
+            <button id="pauseBtn">暂停</button>
+            <button id="completeBtn">完成</button>
+        </div>
+        <div id="speedInputContainer" style="margin-top: 10px; display: none;">
+            <label for="speedInput">障碍物速度: </label>
+            <input type="number" id="speedInput" min="0.1" step="0.1" value="1.5">
+            <button id="applySpeedBtn">应用</button>
         </div>
     </div>
     <script src="src/levels/level1.js"></script>
     <script src="src/levels/level2.js"></script>
     <script src="src/levels/level3.js"></script>
+    <script src="src/levels/testLevel.js"></script>
     <script src="src/obstacles.js"></script>
+    <script>
+        // 关卡数组
+        const levels = [
+            level1,
+            level2,
+            level3,
+            testLevel
+        ];
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -35,8 +35,8 @@ canvas {
 }
 
 button {
-    font-size: 24px;
-    padding: 15px 30px;
+    font-size: 14px;
+    padding: 2.5px 15px;
     border: none;
     border-radius: 5px;
     background-color: #3498db;
@@ -44,7 +44,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     flex: 1;
-    max-width: 100px;
+    max-width: 80px;
 }
 
 button:hover {
@@ -103,8 +103,8 @@ button:hover {
 }
 
 .menu-btn {
-    font-size: 24px;
-    padding: 20px;
+    font-size: 18px;
+    padding: 5px;
     border-radius: 10px;
     background-color: #3498db;
     color: white;
@@ -128,8 +128,8 @@ button:hover {
 }
 
 .level-btn {
-    font-size: 24px;
-    padding: 20px;
+    font-size: 18px;
+    padding: 5px;
     border-radius: 10px;
     background-color: #3498db;
     color: white;
@@ -150,8 +150,8 @@ button:hover {
     }
     
     button {
-        font-size: 20px;
-        padding: 12px 24px;
+        font-size: 14px;
+        padding: 3px 12px;
     }
     
     .level-select h2 {
@@ -159,7 +159,7 @@ button:hover {
     }
     
     .level-btn {
-        font-size: 20px;
-        padding: 15px;
+        font-size: 18px;
+        padding: 5px;
     }
 }
