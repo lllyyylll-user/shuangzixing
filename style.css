@@ -60,6 +60,16 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* 禁用按钮的文本选择和上下文菜单 */
+button {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 /* 通用菜单样式 */
 .menu {
     position: absolute;
