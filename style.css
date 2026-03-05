@@ -15,6 +15,7 @@ body {
     max-width: 320px;
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
 }
 
 canvas {
@@ -25,6 +26,8 @@ canvas {
     height: auto;
     max-width: 100%;
     aspect-ratio: 9/16; /* 手机屏幕比例 */
+    position: relative;
+    z-index: 1;
 }
 
 .controls {
@@ -32,15 +35,53 @@ canvas {
     display: flex;
     justify-content: center;
     gap: 10px;
+    position: relative;
 }
 
 .controls.normal-level {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
     justify-content: space-between;
 }
 
 .controls.normal-level button {
     flex: 0 0 auto;
     width: 80px;
+}
+
+/* 左右箭头按钮样式 */
+#leftBtn, #rightBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(52, 152, 219, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+}
+
+/* 正常关卡中的左右箭头按钮位置 */
+.controls.normal-level #leftBtn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.controls.normal-level #rightBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.controls.normal-level #menuBtn {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
 }
 
 button {
